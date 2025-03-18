@@ -12,19 +12,19 @@
 (def ^:dynamic *port* nil)
 
 (def socket-types
-  [[:pair   ]
-   [:pub    ]
+  [[:pair]
+   [:pub]
    [:sub    {:linger 0}]
-   [:req    ]
-   [:rep    ]
-   [:xreq   ]
-   [:xrep   ]
-   [:dealer ]
-   [:router ]
-   [:xpub   ]
+   [:req]
+   [:rep]
+   [:xreq]
+   [:xrep]
+   [:dealer]
+   [:router]
+   [:xpub]
    [:xsub   {:linger 0}]
-   [:pull   ]
-   [:push   ]])
+   [:pull]
+   [:push]])
 
 (def options
   [["send HWM"    :send-hwm    #(.getSndHWM %)]
@@ -36,7 +36,7 @@
                         :as defaults
                         :or {send-hwm    1000
                              receive-hwm 1000
-                             linger      -1}}] socket-types
+                             linger      0}}] socket-types
           action [:bind :connect]
           protocol ["tcp" "inproc"]
           :let [port (util/find-open-port)

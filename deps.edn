@@ -1,0 +1,11 @@
+{:paths ["src" "test"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        org.zeromq/jeromq {:mvn/version "0.6.0"}
+        clj-wallhack {:mvn/version "1.0.1"}
+        potemkin {:mvn/version "0.4.6"}}
+ :aliases
+ {:test
+  {:paths ["test"]       ; 你的资源路径在 Boot 文件中被指定为 "test"，这里也沿用
+   :deps {adzerk/bootlaces {:mvn/version "0.1.13"}
+          adzerk/boot-test {:mvn/version "1.2.0"}}
+   :main-opts ["-m" "clojure.test" "-e" "(set! *test-out* true) (require 'boot.from.io.aviso.ansi) (require 'boot.from.me.raynes.conch) (require 'clojure.java.io) (require 'clojure.string) (require 'ezzmq.util) (load \"test.clj\")"]}}}

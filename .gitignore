@@ -1,2 +1,4 @@
 .nrepl*
 .lsp/
+.clj-kondo/
+.cpcache/
